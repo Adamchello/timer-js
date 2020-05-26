@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stoper</title>
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    
+    <main class="timer">
+      <header class="timer__header">
+        <h1 class="timer__heading">TIMER</h1>
+      </header>
+      <section class="timer__clock">
+        <article class="clock">
+          <input class="clock__input" name="hours" id="hours" type="number" min=00 max=99 value=00>
+          <label class="clock__label" for="hours">hours</label>
+        </article>
+        <article class="clock">
+          <input class="clock__input" name="minutes" id="minutes" type="number" min=00 max=99 value=00>
+          <label class="clock__label" for="minutes">minutes</label>
+        </article>
+        <article class="clock">
+          <input class="clock__input" name="seconds" id="seconds" type="number" min=00 max=99 value=00>
+          <label class="clock__label" for="seconds">seconds</label>
+      </article>
+      </section>
+      <footer class="timer__buttons">
+        <button class="timer__button" data-confirm><i class="fas fa-check" id="save"></i><i class="fas fa-pen hidden" id="change"></i></button>
+        <button class="timer__button timer__button--start" data-start disabled><i class="fas fa-play" id="start"></i><i class="fas fa-pause hidden" id="stop"></i></button>
+        <button class="timer__button" data-reset><i class="fas fa-redo"></i></button>
+      </footer>
+      <audio src="./assets/alarm-sound.mp3" data-audio loop></audio>
+      <button class="timer__button timer__button--alarm hidden" data-alarm><i class="fas fa-clock"></i> </button>
+    </main>
+
+    <script src="./js/index.js"></script>
+    <script>
+      
+      const timer = new Timer();
+      timer.initializeTimer();
+
+    </script>
+  </body>
+</html>

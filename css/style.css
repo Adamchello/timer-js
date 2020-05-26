@@ -1,0 +1,120 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: #333;
+  color: white;
+  font-family: 'Aldrich', sans-serif;
+}
+
+.timer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timer__heading{
+  font-size: 60px;
+  transform: translateY(-100px);
+}
+
+.timer__clock{
+  display: flex;
+  flex-direction: row;
+}
+
+.clock{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.clock__input{
+  width: 125px;
+  height: 125px;
+  background-color: #333;
+  color:white;
+  font-size: 80px;
+  outline: none;
+  text-align: center;
+  font-family: 'Aldrich', sans-serif;
+}
+
+.clock__input:disabled{
+  border: none;
+  cursor: auto;
+}
+
+.timer__button--start:disabled, .timer__button:disabled{
+  color: grey;
+  cursor: auto;
+}
+
+.timer__button--start:disabled:hover, .timer__button:disabled:hover{
+  color: grey;
+}
+
+.clock__label{
+  font-size: 24px; 
+}
+
+.timer__buttons { 
+  margin-top: 25px;
+  width: 285px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.timer__button { 
+  outline: none;
+  font-size: 36px;
+  color: white;
+  background-color: #333;
+  border: none;
+  cursor: pointer;
+}
+
+.timer__button:hover {
+  color: #41b883;
+}
+
+.hidden {
+  display:none;
+}
+
+.clock__input::-webkit-outer-spin-button,
+.clock__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@keyframes vibration {
+  0% {
+    transform: translateX(2px);
+  }
+  50% {
+    transform: translateX(-2px);
+  }
+  100% {
+    transform: translateX(2px);
+  }
+}
+
+.timer__button--alarm{
+  position: absolute;
+  bottom: -100px;
+  color: #B22222;
+  animation: vibration .1s ease infinite;
+}
+
+.timer__button--alarm:hover{
+  color: #B22222	
+  ;
+}
